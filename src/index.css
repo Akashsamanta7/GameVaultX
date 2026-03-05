@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-vault-bg: #050505;
+  --color-vault-accent: #6366f1; /* Indigo */
+  --color-vault-accent-glow: rgba(99, 102, 241, 0.3);
+}
+
+@layer base {
+  body {
+    @apply bg-vault-bg text-slate-300 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 20px var(--color-vault-accent-glow);
+  }
+  
+  .atmosphere {
+    background: 
+      radial-gradient(circle at 50% -20%, #1e1b4b 0%, transparent 70%),
+      radial-gradient(circle at 0% 100%, #0f172a 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, #1e1b4b 0%, transparent 50%);
+  }
+}
